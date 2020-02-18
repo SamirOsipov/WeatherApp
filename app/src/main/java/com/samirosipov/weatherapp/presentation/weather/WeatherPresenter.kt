@@ -27,7 +27,7 @@ class WeatherPresenter @Inject constructor(
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-
+                Timber.d(it.main.temperature.toString())
                 viewState.showWeather(it)
             }, {
                 Timber.e(it)
