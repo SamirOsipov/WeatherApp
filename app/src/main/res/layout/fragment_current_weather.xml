@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
@@ -21,15 +21,15 @@
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="KRASNODAR, KRD"
-            android:textSize="24dp" />
+            android:textSize="24dp"
+            tool:text="KRASNODAR, KRD" />
 
         <TextView
             android:id="@+id/updated_at"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="17 February 2020, 22:32 PM"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            tool:text="17 February 2020, 22:32 PM" />
     </LinearLayout>
 
 
@@ -49,8 +49,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Clear Sky"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            tool:text="Clear Sky" />
 
         <TextView
             android:id="@+id/temp"
@@ -125,8 +125,8 @@
                 android:id="@+id/sunrise"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="06:40 AM"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                tool:text="07:18" />
         </LinearLayout>
 
         <Space
@@ -162,8 +162,8 @@
                 android:id="@+id/sunset"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="06:40 AM"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                tool:text="17:56" />
         </LinearLayout>
 
         <Space
@@ -199,7 +199,6 @@
                 android:id="@+id/wind"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="06:40 AM"
                 android:textSize="14dp" />
         </LinearLayout>
     </LinearLayout>
@@ -301,7 +300,8 @@
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:tint="#FFFFFF" />
+                android:tint="#FFFFFF"
+                android:src="@drawable/ic_visibility"/>
 
             <Space
                 android:layout_width="wrap_content"
@@ -310,13 +310,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Visibilty"
                 android:textSize="12dp" />
 
             <TextView
-                android:id="@+id/about"
+                android:id="@+id/visibility"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                tool:text="10 km/h" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

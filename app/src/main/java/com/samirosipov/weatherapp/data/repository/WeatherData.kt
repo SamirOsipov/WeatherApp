@@ -6,9 +6,13 @@ data class WeatherData(
 
     val main: MainData,
 
+    val visibility: Int,
+
     val wind: WindData,
 
-    val dt: Long,
+    val dt: String,
+
+    val system: SystemData,
 
     val name: String
 )
@@ -40,4 +44,10 @@ data class WindData(
     val speed: Int,
 
     val degree: Int
+)
+
+data class SystemData(
+    val country: String,
+    val sunrise: String,
+    val sunset: String
 )

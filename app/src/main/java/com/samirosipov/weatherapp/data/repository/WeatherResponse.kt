@@ -7,11 +7,15 @@ data class WeatherResponse(
 
     @SerializedName("weather")
     @Expose
-    var weather: List<Weather>?,
+    val weather: List<Weather>?,
 
     @SerializedName("main")
     @Expose
-    var main: Main?,
+    val main: Main?,
+
+    @SerializedName("visibility")
+    @Expose
+    val visibility: Int?,
 
     @SerializedName("wind")
     @Expose
@@ -19,10 +23,14 @@ data class WeatherResponse(
 
     @SerializedName("dt")
     @Expose
-    var dt: Long?,
+    val dt: Long?,
+
+    @SerializedName("sys")
+    @Expose
+    val sys: Sys?,
 
     @SerializedName("name")
-    var name: String?
+    val name: String?
 )
 
 
@@ -30,42 +38,42 @@ data class Weather(
 
     @SerializedName("id")
     @Expose
-    var id: Int?,
+    val id: Int?,
 
     @SerializedName("main")
     @Expose
-    var main: String?,
+    val main: String?,
 
     @SerializedName("description")
     @Expose
-    var description: String?,
+    val description: String?,
 
     @SerializedName("icon")
     @Expose
-    var icon: String?
+    val icon: String?
 )
 
 data class Main(
 
     @SerializedName("temp")
     @Expose
-    var temp: Double?,
+    val temp: Double?,
 
     @SerializedName("pressure")
     @Expose
-    var pressure: Double?,
+    val pressure: Double?,
 
     @SerializedName("humidity")
     @Expose
-    var humidity: Int?,
+    val humidity: Int?,
 
     @SerializedName("temp_min")
     @Expose
-    var temp_min: Double?,
+    val temp_min: Double?,
 
     @SerializedName("temp_max")
     @Expose
-    var temp_max: Double?
+    val temp_max: Double?
 )
 
 data class Wind(
@@ -77,4 +85,19 @@ data class Wind(
     @SerializedName("deg")
     @Expose
     val degree: Int?
+)
+
+data class Sys(
+    @SerializedName("country")
+    @Expose
+    val country: String?,
+
+    @SerializedName("sunrise")
+    @Expose
+    val sunrise: Long?,
+
+    @SerializedName("sunset")
+    @Expose
+    val sunset: Long?
+
 )

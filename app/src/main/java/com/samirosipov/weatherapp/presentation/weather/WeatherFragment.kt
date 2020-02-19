@@ -12,6 +12,8 @@ import moxy.presenter.ProvidePresenter
 import javax.inject.Inject
 
 const val DEGREE_SYMBOL = "°C"
+const val SPEED_SYMBOL = "km/h"
+const val DISTANCE_SYMBOL = "km"
 class WeatherFragment: BaseFragment(R.layout.fragment_current_weather), WeatherView {
 
     companion object {
@@ -39,11 +41,17 @@ class WeatherFragment: BaseFragment(R.layout.fragment_current_weather), WeatherV
     }
 
     override fun showWeather(weatherData: WeatherData) {
+        address.text = "${weatherData.name}"
+        updated_at.text = "${weatherData.dt}"
+        status.text = "${weatherData.weatherCommon[0].description}"
         temp.text = "${weatherData.main?.temperature} $DEGREE_SYMBOL"
         temp_max.text = "${weatherData.main?.temperature_max} $DEGREE_SYMBOL"
         temp_min.text = "${weatherData.main?.temperature_min} $DEGREE_SYMBOL"
         humidity.text = "${weatherData.main.humidity}%"
         pressure.text = "${weatherData.main.pressure}"
-        wind.text = "${weatherData.wind.speed}"
+        wind.text = "${weatherData.wind.speed} $SPEED_SYMBOL"
+        sunrise.text = "${weatherData.system.sunrise}"
+        sunset.text = "${weatherData.system.sunset}"
+        visibility.text = "${weatherData.visibility} $DISTANCE_SYMBOL"
     }
 }
